@@ -20,3 +20,8 @@ app.listen(8080, function() {
         console.log('restbus is listening on port 3000');
     });
 });
+
+// application
+app.get('*', function(req, res) {
+    res.sendfile('./public/index.html');
+});
