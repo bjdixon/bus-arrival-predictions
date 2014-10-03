@@ -6,10 +6,29 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/app.css" />
 </head>
-<body>
+<body ng-cloak>
 
 <div class="container" ng-controller="PredictionsController">
-    Message: {{message}}
+    <div class="row">
+        <div class="span3">
+            <h1>Message: {{ message }}</h1>
+            <strong>Sort by:</strong><br>
+            <select ng-model="sortorder" class="input-small">
+                <option selected value="region">Region</option>
+                <option value="title">Title</option>
+            </select>
+        </div>
+        <div class="span9">
+            <ul>
+                <li ng-repeat="agency in agencies | orderBy:sortorder">
+                    <div class="well">
+                        <strong>{{ agency.title }}</strong><br>
+                        {{ agency.region }}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 <script src="/lib/jquery.min.js"></script>
