@@ -22,6 +22,7 @@ predictionsApp.controller('routesController',
 
         $http.get('http://localhost:3000/agencies/' + agency + '/routes')
             .success(function(data) {
+                $scope.agency_id = agency;
                 $scope.routes = data;
             })
             .error(function(data) {
