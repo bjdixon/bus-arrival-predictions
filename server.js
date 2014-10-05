@@ -21,7 +21,3 @@ app.listen(8080, function() {
     });
 });
 
-// application
-app.get('*', function(req, res) {
-    res.sendfile('./public/index.html');
-});

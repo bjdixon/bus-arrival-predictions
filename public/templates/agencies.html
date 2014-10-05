@@ -1,0 +1,19 @@
+	<div class="span3">
+            <h1>Find your local bus company</h1>
+            <strong>Search:</strong> <input type="text" ng-model="query" class="input-small"><br>
+            <strong>Sort by:</strong>
+            <select ng-model="sortorder" class="input-small">
+                <option selected value="region">Region</option>
+                <option value="title">Title</option>
+            </select>
+        </div>
+        <div class="span9">
+            <div ng-repeat="agency in agencies | orderBy:sortorder | filter:query">
+                <a href="agency/{{ agency.id }}" class="bigbutton">
+                    <div class="well">
+                        <strong>{{ agency.title }}</strong><br>
+                        {{ agency.region }}
+                    </div>
+                </a>
+            </div>
+        </div>

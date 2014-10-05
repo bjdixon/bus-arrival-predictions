@@ -1,8 +1,7 @@
 'use strict';
 
-predictionsApp.controller('PredictionsController',
-    function PredictionsController($scope, $http) {
-        $scope.message = 'hello world';
+predictionsApp.controller('agenciesController',
+    function agenciesController($scope, $http) {
         $scope.agencies = {};
 
         $http.get('http://localhost:3000/agencies') 
@@ -15,3 +14,19 @@ predictionsApp.controller('PredictionsController',
             });
     }
 );
+
+predictionsApp.controller('routesController',
+    function routesController($scope, $http, $routeParams) {
+        $scope.routes = {};
+        var agency = $routeParams.agency_id;
+
+        $http.get('http://localhost:3000/agencies/' + agency + '/routes')
+            .success(function(data) {
+                $scope.routes = data;
+            })
+            .error(function(data) {
+                console.log('ERROR: ' + data);
+            });
+    }
+);
+
