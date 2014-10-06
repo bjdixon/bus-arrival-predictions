@@ -1,0 +1,13 @@
+	    <div class="span3">
+            <h1>Your next bus arrivals</h1>
+        </div>
+        <div class="span9">
+            <div ng-repeat="prediction in predictions | filter:query">
+                <div class="well row">
+                    <div class="span9">
+                        <h2>Minutes: {{ prediction.minutes }}</h2>
+                        Arriving at {{ prediction.epochTime }}
+                    </div>
+                </div>
+            </div>
+        </div>
