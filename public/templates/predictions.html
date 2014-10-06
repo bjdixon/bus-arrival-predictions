@@ -6,7 +6,7 @@
                 <div class="well row">
                     <div class="span9">
                         <h2>Minutes: {{ prediction.minutes }}</h2>
-                        Arriving at {{ prediction.epochTime }}
+                        Arriving at {{ prediction.epochTime | date: 'shortTime' }}
                     </div>
                 </div>
             </div>
