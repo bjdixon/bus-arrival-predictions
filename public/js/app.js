@@ -4,9 +4,8 @@ var predictionsApp = angular.module('predictionsApp', ['ngRoute']);
 
 // route configuration
 predictionsApp.config(function($locationProvider, $routeProvider) {
-    $locationProvider.html5Mode(true);
     $routeProvider
-        .when('/', {
+        .when('/agencies', {
             templateUrl : '/templates/agencies.html',
             controller : 'agenciesController'
         })
@@ -21,6 +20,7 @@ predictionsApp.config(function($locationProvider, $routeProvider) {
         .when('/agency/:agency_id/:route_id/:stop_id', {
             templateUrl : '/templates/predictions.html',
             controller : 'predictionsController'
-        });
+        })
+    $locationProvider.html5Mode(true);
 });
 

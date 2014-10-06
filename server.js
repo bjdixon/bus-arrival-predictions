@@ -3,7 +3,6 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
-// start the restbus server 
 // (serves the nextbus xml api as json)
 var restbus = require('restbus');
 
@@ -21,3 +20,6 @@ app.listen(8080, function() {
     });
 });
 
+app.get('*', function(req, res) {
+    res.sendfile('./public/index.html');
+});
