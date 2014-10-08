@@ -1,13 +1,20 @@
-	<div class="span3">
-            <h1>Find your local bus company</h1>
-            <strong>Search:</strong> <input type="text" ng-model="query" class="input-small"><br>
-            <strong>Sort by:</strong>
-            <select ng-model="sortorder" class="input-small">
-                <option selected value="region">Region</option>
-                <option value="title">Title</option>
-            </select>
+	<div class="col-md-3">
+            <div class="form-horizontal" role="form">
+                <h1>Find your local bus company</h1>
+                <div class="form-group form-inline">
+                    <label for="query" class="control-label col-sm-offset-1">Search:</label> 
+                    <input type="text" ng-model="query" id="query" class="form-control" placeholder="Search">
+                </div>
+                <div class="form-group form-inline">
+                    <label for="sortorder" class="control-label col-sm-offset-1">Sort by:</label>
+                    <select ng-model="sortorder" id="sortorder" class="form-control">
+                        <option selected value="region">Region</option>
+                        <option value="title">Title</option>
+                    </select>
+                </div>
+            </div>
         </div>
-        <div class="span9">
+        <div class="col-md-9">
             <div ng-repeat="agency in agencies | orderBy:sortorder | filter:query">
                 <a href="agency/{{ agency.id }}" class="bigbutton">
                     <div class="well">

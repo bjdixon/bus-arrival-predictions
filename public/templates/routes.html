@@ -1,15 +1,20 @@
-	    <div class="span3">
-            <h1>Find your bus route</h1>
-            <strong>Search:</strong> <input type="text" ng-model="query" class="input-small"><br>
+	    <div class="col-md-3">
+            <div class="form-horizontal" role="form">
+                <h1>Find your bus route</h1>
+                <div class="form-group form-inline">
+                    <label for="query" class="control-label col-sm-offset-1">Search:</label> 
+                    <input type="text" id="query" ng-model="query" class="form-control" placeholder="Search">
+                </div>
+            </div>
         </div>
-        <div class="span9">
+        <div class="col-md-9">
             <div ng-repeat="route in routes | filter:query">
                 <a href="{{ agency_id }}/{{ route.id }}" class="bigbutton">
                     <div class="well row">
-                        <div class="span3">
-                            <h2>#{{ route.id }}</h2>
+                        <div class="col-md-3">
+                            <h2>{{ route.id }}</h2>
                         </div>
-                        <div class="span6">
+                        <div class="col-md-9">
                             <strong>{{ route.title }}</strong>
                         </div>
                     </div>
