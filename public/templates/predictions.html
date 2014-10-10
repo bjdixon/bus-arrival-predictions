@@ -12,8 +12,8 @@
             <div ng-show="predictions.length > 0" ng-repeat="prediction in predictions">
                 <div class="well row">
                     <div class="col-md-12">
-                        <h2>Minutes: {{ prediction.minutes }}</h2>
-                        Arriving at {{ prediction.epochTime | date: 'shortTime' }}
+                        <h2>Branch: {{ prediction.branch }} arriving in {{ prediction.minutes }} minutes</h2>
+                        Predicted time of arrival: {{ prediction.epochTime | date: 'shortTime' }} | Vehicle ID: {{ prediction.vehicle.id }}
                     </div>
                 </div>
             </div>
