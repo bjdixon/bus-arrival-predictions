@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-9">
             <div ng-repeat="agency in agencies | orderBy:sortorder | filter:query">
-                <a href="agency/{{ agency.id }}" class="bigbutton">
+                <a ng-href="agency/{{ agency.id }}" class="bigbutton">
                     <div class="well">
                         <strong>{{ agency.title }}</strong><br>
                         {{ agency.region }}

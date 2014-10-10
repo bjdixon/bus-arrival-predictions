@@ -9,7 +9,7 @@
         </div>
         <div class="col-md-9">
             <div ng-repeat="route in routes | filter:query">
-                <a href="{{ agency_id }}/{{ route.id }}" class="bigbutton">
+                <a ng-href="{{ agency_id }}/{{ route.id }}" class="bigbutton">
                     <div class="well row">
                         <div class="col-md-3">
                             <h2>{{ route.id }}</h2>
