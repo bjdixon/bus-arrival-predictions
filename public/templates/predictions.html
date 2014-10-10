@@ -2,7 +2,14 @@
             <h1>Your next bus arrivals</h1>
         </div>
         <div class="col-md-9">
-            <div ng-repeat="prediction in predictions | filter:query">
+            <div ng-show="predictions_available === false" class="row">
+                <div class="col-md-12">
+                    <p class="bg-info">
+                        Predictions are not available at this time.
+                    </p>
+                </div>
+            </div>
+            <div ng-show="predictions.length > 0" ng-repeat="prediction in predictions">
                 <div class="well row">
                     <div class="col-md-12">
                         <h2>Minutes: {{ prediction.minutes }}</h2>

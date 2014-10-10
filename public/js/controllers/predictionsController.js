@@ -54,7 +54,12 @@ predictionsApp.controller('predictionsController',
 
         $http.get('http://localhost:3000/agencies/' + $scope.agency_id + '/routes/' + $scope.route_id + '/stops/' + $scope.stop_id + '/predictions')
             .success(function(data) {
-                $scope.predictions = data[0].values;
+                $scope.predictions_available = false;
+                $scope.predictions = (data[0].values != undefined) ? data[0].values : [];
+                if ($scope.predictions.length > 0) {
+                    $scope.predictions_available = true;
+                }
+                console.log($scope.predictions);
             })
             .error(function(data) {
                 console.log('ERROR: ' + data);
