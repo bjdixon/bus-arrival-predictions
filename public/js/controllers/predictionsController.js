@@ -70,3 +70,20 @@ predictionsApp.controller('predictionsController',
             });
     }
 );
+predictionsApp.controller('aboutController', 
+    function aboutController($scope, $http, $routeParams) {
+        $http.get('http://localhost:3000/about')
+            .success(function(data) {
+                // in case I want this later
+            })
+            .error(function(data) {
+                console.log('ERROR: ' + data);
+            });
+    }
+);
+
+predictionsApp.controller('contactController',
+    function contactController($scope, $http, $routeParams) {
+        // in case I want this later
+    }
+);

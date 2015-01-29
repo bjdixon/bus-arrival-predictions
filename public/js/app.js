@@ -21,6 +21,14 @@ predictionsApp.config(function($locationProvider, $routeProvider) {
             templateUrl : '/templates/predictions.html',
             controller : 'predictionsController'
         })
+        .when('/about', {
+            templateUrl : '/templates/about.html',
+            controller : 'aboutController'
+        })
+        .when('/contact', {
+            templateUrl : '/templates/contact.html',
+            controller : 'contactController'
+        })
     $locationProvider.html5Mode(true);
 });
 

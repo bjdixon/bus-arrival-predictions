@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/app.css" />
 </head>
-<body ng-cloak>
+<body>
 
 <div class="container-fluid">
     
@@ -23,7 +23,7 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/agencies">Lookup tool</a></li>
+                    <li class="active"><a href="/agency/ttc">Lookup tool</a></li>
                     <li><a href="/about">About this service</a></li>
                     <li><a href="/contact">Contact</a></li>
                 </ul>
@@ -31,7 +31,7 @@
         </div>
     </nav>
 
-    <div class="row" ng-view>
+    <div class="row" ng-view ng-cloak>
         
     </div>
 </div>
