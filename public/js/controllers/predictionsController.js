@@ -38,6 +38,10 @@ predictionsApp.controller('stopsController',
         $http.get('http://localhost:3000/agencies/' + $scope.agency_id + '/routes/' + $scope.route_id)
             .success(function(data) {
                 $scope.stops = data.stops;
+                // TODO
+                // get data.directions
+                // if data.stops.stop.id in data.directions.direction.id
+                // add direction.title to data.stops.stop
             })
             .error(function(data) {
                 console.log('ERROR: ' + data);

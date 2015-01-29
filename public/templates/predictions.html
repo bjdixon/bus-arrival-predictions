@@ -13,7 +13,7 @@
                 <div class="well row">
                     <div class="col-md-12">
                         <h2>Branch: {{ prediction.branch }} arriving in {{ prediction.minutes }} minutes</h2>
-                        Predicted time of arrival: {{ prediction.epochTime | date: 'shortTime' }} | Vehicle ID: {{ prediction.vehicle.id }}
+                        Predicted time of arrival: {{ prediction.epochTime | date: 'shortTime' }} | Vehicle ID: {{ prediction.vehicle.id }} Travelling {{ prediction.direction.title }}
                     </div>
                 </div>
             </div>
