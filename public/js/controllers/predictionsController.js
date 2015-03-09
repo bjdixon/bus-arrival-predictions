@@ -1,5 +1,13 @@
 'use strict';
 
+predictionsApp.controller('menuController', 
+    function menuController($scope, $location) {
+        $scope.is_active = function (path_root) {
+            return path_root === $location.path().substr(1, path_root.length);
+        };
+    }
+);
+
 predictionsApp.controller('agenciesController',
     function agenciesController($scope, $http) {
         $scope.agencies = {};
@@ -72,13 +80,7 @@ predictionsApp.controller('predictionsController',
 );
 predictionsApp.controller('aboutController', 
     function aboutController($scope, $http, $routeParams) {
-        $http.get('http://localhost:3000/about')
-            .success(function(data) {
-                // in case I want this later
-            })
-            .error(function(data) {
-                console.log('ERROR: ' + data);
-            });
+        // in case I want this later
     }
 );
 
