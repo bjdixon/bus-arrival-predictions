@@ -1,8 +1,22 @@
 so far...
----------
+=========
 
-Shell of the application (server and angular libraries) has been added.
+## Lookup tool for bus routes and next arrival predictions. 
 
-serves restbus api eg: http://localhost:3000/agencies/ttc/routes/90/
-serves front end application (angular) eg: http://localhost:8080/
+This version is defaulting to the TTC (Toronto Transit Commission) as it's one of only a couple of transit services that implement the predictions API. Well... that and I live in Toronto. 
+
+Instructions for installation
+-----------------------------
+
+```shell
+git clone https://github.com/bjdixon/bus-arrival-predictions.git
+cd bus-arrival-predictions
+npm install
+node server.js
+```
+
+Serves restbus api eg: http://localhost:3000/agencies/ttc/routes/90/
+Serves front end application (angular) eg: http://localhost:8080/
+
+Includes a small suite of integration tests that require protractor.js to run.
 

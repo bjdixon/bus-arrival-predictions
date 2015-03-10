@@ -1,14 +1,30 @@
 {
-    "name"          : "bus-tarot",
-    "version"       : "0.0.0",
-    "description"   : "Predicts when your bus will arrive",
-    "main"          : "server.js",
-    "author"        : "bjdixon",
-    "dependencies"  : {
-        "express"   : "~4.7.2",
-        "morgan"    : "~1.2.2",
-        "body-parser" : "~1.5.2",
-        "method-override" : "~2.1.2"
-        }
+  "name": "node-bus",
+  "version": "0.0.1",
+  "description": "Predicts when your bus will arrive",
+  "main": "server.js",
+  "author": "bjdixon",
+  "dependencies": {
+    "express": "~4.7.2",
+    "morgan": "~1.2.2",
+    "body-parser": "~1.5.2",
+    "method-override": "~2.1.2",
+    "restbus": "~1.1.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bjdixon/bus-arrival-predictions.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bjdixon/bus-arrival-predictions/issues"
+  },
+  "homepage": "https://github.com/bjdixon/bus-arrival-predictions"
 }
-
