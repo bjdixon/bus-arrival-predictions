@@ -89,3 +89,10 @@ predictionsApp.controller('contactController',
         // in case I want this later
     }
 );
+
+
+predictionsApp.controller('homepageController',
+    function homepageController($scope, $http, $routeParams) {
+        // in case I want this later
+    }
+);

@@ -5,6 +5,10 @@ var predictionsApp = angular.module('predictionsApp', ['ngRoute']);
 // route configuration
 predictionsApp.config(function($locationProvider, $routeProvider) {
     $routeProvider
+        .when('/', {
+            templateUrl : '/templates/homepage.html',
+            controller : 'homepageController'
+        })
         .when('/agencies', {
             templateUrl : '/templates/agencies.html',
             controller : 'agenciesController'
