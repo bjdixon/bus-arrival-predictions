@@ -3,3 +3,6 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none;
 }
+.big-wells {
+    padding-right:30px;
+}
