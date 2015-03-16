@@ -11,10 +11,12 @@ predictionsApp.controller('menuController',
 predictionsApp.controller('agenciesController',
     function agenciesController($scope, $http) {
         $scope.agencies = {};
+        $scope.data_loading = true;
 
         $http.get('http://localhost:3000/agencies') 
             .success(function(data) { 
                 $scope.agencies = data; 
+                $scope.data_loading = false;
             })
             .error(function(data) {
                 console.log('ERROR: ' + data);
@@ -26,6 +28,7 @@ predictionsApp.controller('routesController',
     function routesController($scope, $http, $routeParams) {
         $scope.routes = {};
         $scope.agency_id = $routeParams.agency_id;
+        $scope.data_loading = true;
 
         $http.get('http://localhost:3000/agencies/' + $scope.agency_id + '/routes')
             .success(function(data) {
@@ -36,6 +39,7 @@ predictionsApp.controller('routesController',
                         value.title = value.title.split('-')[1];
                     });
                 }
+                $scope.data_loading = false;
             })
             .error(function(data) {
                 console.log('ERROR: ' + data);
@@ -48,14 +52,12 @@ predictionsApp.controller('stopsController',
         $scope.stops = {};
         $scope.agency_id = $routeParams.agency_id;
         $scope.route_id = $routeParams.route_id;
+        $scope.data_loading = true;
 
         $http.get('http://localhost:3000/agencies/' + $scope.agency_id + '/routes/' + $scope.route_id)
             .success(function(data) {
                 $scope.stops = data.stops;
-                // TODO
-                // get data.directions
-                // if data.stops.stop.id in data.directions.direction.id
-                // add direction.title to data.stops.stop
+                $scope.data_loading = false;
             })
             .error(function(data) {
                 console.log('ERROR: ' + data);
@@ -69,6 +71,7 @@ predictionsApp.controller('predictionsController',
         $scope.agency_id = $routeParams.agency_id;
         $scope.route_id = $routeParams.route_id;
         $scope.stop_id = $routeParams.stop_id;
+        $scope.data_loading = true;
 
         $http.get('http://localhost:3000/agencies/' + $scope.agency_id + '/routes/' + $scope.route_id + '/stops/' + $scope.stop_id + '/predictions')
             .success(function(data) {
@@ -77,13 +80,14 @@ predictionsApp.controller('predictionsController',
                 if ($scope.predictions.length > 0) {
                     $scope.predictions_available = true;
                 }
-                console.log($scope.predictions);
+                $scope.data_loading = false;
             })
             .error(function(data) {
                 console.log('ERROR: ' + data);
             });
     }
 );
+
 predictionsApp.controller('aboutController', 
     function aboutController($scope, $http, $routeParams) {
         // in case I want this later
@@ -95,7 +99,6 @@ predictionsApp.controller('contactController',
         // in case I want this later
     }
 );
-
 
 predictionsApp.controller('homepageController',
     function homepageController($scope, $http, $routeParams) {
