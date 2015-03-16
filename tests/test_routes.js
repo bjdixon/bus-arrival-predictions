@@ -21,12 +21,15 @@ describe('Route page loads', function () {
         expect(element.all(by.repeater('route in routes')).count()).toBeGreaterThan(160);
     });
     it('should display the correct route when performing a search', function () {
-        var results;
+        var results, 
+            first_a;
         element(by.model('query')).sendKeys('vaughan');
         results = element.all(by.repeater('route in routes'));
+        first_a = results.first().all(by.tagName('a')).first();
         expect(results.count()).toEqual(1);
-        expect(results.first().all(by.tagName('a')).first().getText()).toContain('90-Vaughan');
-        results.first().all(by.tagName('a')).first().click();
+        expect(first_a.getText()).toContain('90');
+        expect(first_a.getText()).toContain('Vaughan');
+        first_a.click();
         expect(element.all(by.tagName('h1')).first().getText()).toEqual('Find your bus stop');
     });
 });

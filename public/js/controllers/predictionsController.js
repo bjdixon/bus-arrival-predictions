@@ -30,6 +30,12 @@ predictionsApp.controller('routesController',
         $http.get('http://localhost:3000/agencies/' + $scope.agency_id + '/routes')
             .success(function(data) {
                 $scope.routes = data;
+                // TTC specific formatting for routes
+                if ($scope.agency_id === 'ttc') {
+                    angular.forEach($scope.routes, function(value, key) {
+                        value.title = value.title.split('-')[1];
+                    });
+                }
             })
             .error(function(data) {
                 console.log('ERROR: ' + data);
