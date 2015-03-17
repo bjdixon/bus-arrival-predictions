@@ -1,5 +1,5 @@
 {
-  "name": "node-bus",
+  "name": "bus-arrival-predictions",
   "version": "0.0.1",
   "description": "Predicts when your bus will arrive",
   "main": "server.js",

@@ -1,7 +1,7 @@
-so far...
-=========
+Lookup bus routes and next arrival predictions. 
+===============================================
 
-## Lookup bus routes and next arrival predictions. 
+You can see a live example of this running here: [ttc.ninja](http://ttc.ninja/)
 
 This version is defaulting to the TTC (Toronto Transit Commission) as it's one of only a couple of transit services that implement the predictions API. Well... that and I live in Toronto. 
 
