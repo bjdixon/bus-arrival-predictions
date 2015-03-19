@@ -4,8 +4,8 @@ var predictionsApp = angular.module('predictionsApp', ['ngRoute', 'ngCookies']);
 
 // constants
 predictionsApp.constant("appConstants", {
-    "url": "http://localhost",
-    "api_url": "http://localhost:3000"
+    "url": "//localhost",
+    "api_url": "//localhost:3000"
 });
 
 // route configuration
