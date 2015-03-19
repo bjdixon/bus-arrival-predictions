@@ -14,6 +14,9 @@
   "scripts": {
     "start": "node server.js"
   },
+  "engines": {
+    "node": "0.10.36"
+  },
   "directories": {
     "test": "tests"
   },
