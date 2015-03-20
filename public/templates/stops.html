@@ -9,6 +9,7 @@
         </div>
         <div class="col-md-9 big-wells">
             <div ng-if="data_loading">Loading stops...</div>
+            <h2 ng-if="!data_loading">Route: {{ route_title }}</h2>
             <div ng-repeat="stop in stops | filter:query">
                 <a ng-href="{{ route_id }}/{{ stop.id }}" class="bigbutton">
                     <div class="well row">

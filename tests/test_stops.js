@@ -20,6 +20,9 @@ describe('Stops page loads', function () {
     it('should be displaying over 35 stops', function () {
         expect(element.all(by.repeater('stop in stops')).count()).toBeGreaterThan(35);
     });
+    it('should be displaying the correct route title', function () {
+        expect(element.all(by.tagName('h2')).first().getText()).toEqual('Route: 90-Vaughan');
+    });
     it('should display the correct stops when performing a search', function () {
         var results;
         element(by.model('query')).sendKeys('winona');

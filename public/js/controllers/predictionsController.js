@@ -56,12 +56,14 @@ predictionsApp.controller('stopsController',
         $scope.stops = {};
         $scope.agency_id = $routeParams.agency_id;
         $scope.route_id = $routeParams.route_id;
+        $scope.route_title = '';
         $scope.data_loading = true;
         url = appConstants.api_url + '/agencies/' + $scope.agency_id + '/routes/' + $scope.route_id;
 
         $http.get(url)
             .success(function(data) {
                 $scope.stops = data.stops;
+                $scope.route_title = data.title;
                 $scope.data_loading = false;
             })
             .error(function(data) {
@@ -76,7 +78,9 @@ predictionsApp.controller('predictionsController',
         $scope.predictions = {};
         $scope.agency_id = $routeParams.agency_id;
         $scope.route_id = $routeParams.route_id;
+        $scope.route_title = '';
         $scope.stop_id = $routeParams.stop_id;
+        $scope.stop_title = '';
         $scope.data_loading = true;
         url = appConstants.api_url + '/agencies/' + $scope.agency_id + '/routes/' + $scope.route_id + '/stops/' + $scope.stop_id + '/predictions';
 
@@ -87,10 +91,12 @@ predictionsApp.controller('predictionsController',
                 if ($scope.predictions.length > 0) {
                     $scope.predictions_available = true;
                 }
+                $scope.route_title = data[0].route.title;
+                $scope.stop_title = data[0].stop.title;
                 $scope.data_loading = false;
                 $cookieStore.put("last_search", {
-                    route: data[0].route.title, 
-                    stop: data[0].stop.title,
+                    route: $scope.route_title,
+                    stop: $scope.stop_title,
                     url: $location.path(),
                     api_url: url
                 });

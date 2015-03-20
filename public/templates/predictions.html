@@ -10,6 +10,9 @@
                     </p>
                 </div>
             </div>
+            <div ng-show="predictions.length > 0">
+                <h2>{{ route_title }} | {{ stop_title }}</h2>
+            </div>
             <div ng-show="predictions.length > 0" ng-repeat="prediction in predictions">
                 <div class="well row">
                     <div class="col-md-12">

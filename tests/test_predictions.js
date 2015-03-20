@@ -17,6 +17,9 @@ describe('Predictions page loads', function () {
         expect(active_class.count()).toEqual(1);
         expect(active_class.first().getText()).toEqual('Lookup tool');
     });
+    it('should display the correct route title and stop title', function () {
+        expect(element.all(by.tagName('h2')).first().getText()).toContain('90-Vaughan | Vaughan Rd At Winona');
+    });
     it('should be displaying 2 or more predictions', function () {
         expect(element.all(by.repeater('prediction in predictions')).count()).toBeGreaterThan(1);
         expect(element.all(by.repeater('prediction in predictions')).first().getText()).toContain('Branch: 90');
