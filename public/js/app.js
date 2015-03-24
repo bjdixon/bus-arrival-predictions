@@ -1,6 +1,5 @@
-(function() {
+(function () {
     'use strict';
-
     var predictionsApp = angular.module('predictionsApp', ['ngRoute', 'ngCookies']);
 
     // constants
@@ -10,7 +9,7 @@
     });
 
     // route configuration
-    predictionsApp.config(function($locationProvider, $routeProvider) {
+    predictionsApp.config(function ($locationProvider, $routeProvider) {
         $routeProvider
             .when('/', {
                 templateUrl : '/templates/homepage.html',
@@ -39,7 +38,7 @@
             .when('/contact', {
                 templateUrl : '/templates/contact.html',
                 controller : 'contactController'
-            })
+            });
         $locationProvider.html5Mode(true);
     });
-})();
+}());
