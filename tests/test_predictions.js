@@ -21,8 +21,8 @@ describe('Predictions page loads', function () {
         expect(element.all(by.tagName('h2')).first().getText()).toContain('90-Vaughan | Vaughan Rd At Winona');
     });
     it('should be displaying 2 or more predictions', function () {
-        expect(element.all(by.repeater('prediction in predictions')).count()).toBeGreaterThan(1);
-        expect(element.all(by.repeater('prediction in predictions')).first().getText()).toContain('Branch: 90');
+        expect(element.all(by.repeater('prediction in vm.predictions')).count()).toBeGreaterThan(1);
+        expect(element.all(by.repeater('prediction in vm.predictions')).first().getText()).toContain('Branch: 90');
     });
 });
 

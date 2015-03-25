@@ -15,8 +15,8 @@
             </div>
         </div>
         <div class="col-md-9">
-            <div ng-if="data_loading">Loading agencies...</div>
-            <div ng-repeat="agency in agencies | orderBy:sortorder | filter:query">
+            <div ng-if="vm.data_loading">Loading agencies...</div>
+            <div ng-repeat="agency in vm.agencies | orderBy:sortorder | filter:query">
                 <a ng-href="agency/{{ agency.id }}" class="bigbutton">
                     <div class="well">
                         <strong>{{ agency.title }}</strong><br>

@@ -2,18 +2,18 @@
             <h1>Your next bus arrivals</h1>
         </div>
         <div class="col-md-9 big-wells">
-            <div ng-if="data_loading">Loading arrival...</div>
-            <div ng-show="predictions_available === false" class="row">
+            <div ng-if="vm.data_loading">Loading arrival...</div>
+            <div ng-show="vm.predictions_available === false" class="row">
                 <div class="col-md-12">
                     <p class="bg-info">
                         Predictions are not available at this time.
                     </p>
                 </div>
             </div>
-            <div ng-show="predictions.length > 0">
-                <h2>{{ route_title }} | {{ stop_title }}</h2>
+            <div ng-show="vm.predictions.length > 0">
+                <h2>{{ vm.route_title }} | {{ vm.stop_title }}</h2>
             </div>
-            <div ng-show="predictions.length > 0" ng-repeat="prediction in predictions">
+            <div ng-show="vm.predictions.length > 0" ng-repeat="prediction in vm.predictions">
                 <div class="well row">
                     <div class="col-md-12">
                         <h2>Branch: {{ prediction.branch }} arriving in {{ prediction.minutes }} minutes</h2>

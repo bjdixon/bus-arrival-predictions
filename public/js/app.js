@@ -11,31 +11,38 @@
             $routeProvider
                 .when('/', {
                     templateUrl : '/templates/homepage.html',
-                    controller : 'HomepageController'
+                    controller : 'HomepageController',
+                    controllerAs: 'vm'
                 })
                 .when('/agencies', {
                     templateUrl : '/templates/agencies.html',
-                    controller : 'AgenciesController'
+                    controller : 'AgenciesController',
+                    controllerAs: 'vm'
                 })
                 .when('/agency/:agency_id', {
                     templateUrl : '/templates/routes.html',
-                    controller : 'RoutesController'
+                    controller : 'RoutesController',
+                    controllerAs: 'vm'
                 })
                 .when('/agency/:agency_id/:route_id', {
                     templateUrl : '/templates/stops.html',
-                    controller : 'StopsController'
+                    controller : 'StopsController',
+                    controllerAs: 'vm'
                 })
                 .when('/agency/:agency_id/:route_id/:stop_id', {
                     templateUrl : '/templates/predictions.html',
-                    controller : 'PredictionsController'
+                    controller : 'PredictionsController',
+                    controllerAs: 'vm'
                 })
                 .when('/about', {
                     templateUrl : '/templates/about.html',
-                    controller : 'AboutController'
+                    controller : 'AboutController',
+                    controllerAs: 'vm'
                 })
                 .when('/contact', {
                     templateUrl : '/templates/contact.html',
-                    controller : 'ContactController'
+                    controller : 'ContactController',
+                    controllerAs: 'vm'
                 });
             $locationProvider.html5Mode(true);
         });

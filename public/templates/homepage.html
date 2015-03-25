@@ -9,10 +9,10 @@
             </ol>
             <!-- last 3 searches -->
         </div>
-        <div ng-if="last_search" class="col-md-12 last-search">
+        <div ng-if="vm.last_search" class="col-md-12 last-search">
             <h2>Your last search</h2>
-            <a ng-href="{{ last_search.url }}">
-                <strong>Route: </strong> {{ last_search.route }}<br>
-                <strong>Stop: </strong> {{ last_search.stop }}
+            <a ng-href="{{ vm.last_search.url }}">
+                <strong>Route: </strong> {{ vm.last_search.route }}<br>
+                <strong>Stop: </strong> {{ vm.last_search.stop }}
             </a>
         </div>

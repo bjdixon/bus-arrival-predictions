@@ -18,7 +18,7 @@ describe('Stops page loads', function () {
         expect(active_class.first().getText()).toEqual('Lookup tool');
     });
     it('should be displaying over 35 stops', function () {
-        expect(element.all(by.repeater('stop in stops')).count()).toBeGreaterThan(35);
+        expect(element.all(by.repeater('stop in vm.stops')).count()).toBeGreaterThan(35);
     });
     it('should be displaying the correct route title', function () {
         expect(element.all(by.tagName('h2')).first().getText()).toEqual('Route: 90-Vaughan');
@@ -26,7 +26,7 @@ describe('Stops page loads', function () {
     it('should display the correct stops when performing a search', function () {
         var results;
         element(by.model('query')).sendKeys('winona');
-        results = element.all(by.repeater('stop in stops'));
+        results = element.all(by.repeater('stop in vm.stops'));
         expect(results.count()).toEqual(2);
         expect(results.first().all(by.tagName('a')).first().getText()).toContain('Vaughan Rd At Winona Dr');
         results.first().all(by.tagName('a')).first().click();
