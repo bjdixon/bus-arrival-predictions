@@ -3,22 +3,22 @@
 
     angular
         .module('predictionsApp')
-        .controller('menuController', menuController)
-        .controller('agenciesController', agenciesController)
-        .controller('routesController', routesController)
-        .controller('stopsController', stopsController)
-        .controller('predictionsController', predictionsController)
-        .controller('homepageController', homepageController)
-        .controller('aboutController', aboutController)
-        .controller('contactController', contactController);
+        .controller('MenuController', MenuController)
+        .controller('AgenciesController', AgenciesController)
+        .controller('RoutesController', RoutesController)
+        .controller('StopsController', StopsController)
+        .controller('PredictionsController', PredictionsController)
+        .controller('HomepageController', HomepageController)
+        .controller('AboutController', AboutController)
+        .controller('ContactController', ContactController);
 
-    function menuController($scope, $location) {
+    function MenuController($scope, $location) {
         $scope.is_active = function (path_root) {
             return path_root === $location.path().substr(1, path_root.length);
         };
     }
 
-    function agenciesController($scope, fetchRestbusDataFactory) {
+    function AgenciesController($scope, fetchRestbusDataFactory) {
         $scope.data_loading = true;
         fetchRestbusDataFactory.get_agencies()
             .then(function (data) {
@@ -27,7 +27,7 @@
             });
     }
 
-    function routesController($scope, $routeParams, fetchRestbusDataFactory) {
+    function RoutesController($scope, $routeParams, fetchRestbusDataFactory) {
         $scope.data_loading = true;
         $scope.agency_id = $routeParams.agency_id;
         fetchRestbusDataFactory.get_routes($routeParams.agency_id)
@@ -37,7 +37,7 @@
             });
     }
 
-    function stopsController($scope, $routeParams, fetchRestbusDataFactory) {
+    function StopsController($scope, $routeParams, fetchRestbusDataFactory) {
         $scope.agency_id = $routeParams.agency_id;
         $scope.route_id = $routeParams.route_id;
         $scope.route_title = '';
@@ -50,7 +50,7 @@
             });
     }
 
-    function predictionsController($scope, $routeParams, fetchRestbusDataFactory) {
+    function PredictionsController($scope, $routeParams, fetchRestbusDataFactory) {
         $scope.agency_id = $routeParams.agency_id;
         $scope.route_id = $routeParams.route_id;
         $scope.route_title = '';
@@ -72,16 +72,16 @@
             });
     }
 
-    function homepageController($scope, $cookies) {
+    function HomepageController($scope, $cookies) {
         $scope.last_search = angular.fromJson($cookies.last_search) || false;
     }
 
-    function aboutController() {
+    function AboutController() {
         // in case I want this later
         return undefined;
     }
 
-    function contactController() {
+    function ContactController() {
         // in case I want this later
         return undefined;
     }

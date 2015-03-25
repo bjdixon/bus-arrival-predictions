@@ -11,31 +11,31 @@
             $routeProvider
                 .when('/', {
                     templateUrl : '/templates/homepage.html',
-                    controller : 'homepageController'
+                    controller : 'HomepageController'
                 })
                 .when('/agencies', {
                     templateUrl : '/templates/agencies.html',
-                    controller : 'agenciesController'
+                    controller : 'AgenciesController'
                 })
                 .when('/agency/:agency_id', {
                     templateUrl : '/templates/routes.html',
-                    controller : 'routesController'
+                    controller : 'RoutesController'
                 })
                 .when('/agency/:agency_id/:route_id', {
                     templateUrl : '/templates/stops.html',
-                    controller : 'stopsController'
+                    controller : 'StopsController'
                 })
                 .when('/agency/:agency_id/:route_id/:stop_id', {
                     templateUrl : '/templates/predictions.html',
-                    controller : 'predictionsController'
+                    controller : 'PredictionsController'
                 })
                 .when('/about', {
                     templateUrl : '/templates/about.html',
-                    controller : 'aboutController'
+                    controller : 'AboutController'
                 })
                 .when('/contact', {
                     templateUrl : '/templates/contact.html',
-                    controller : 'contactController'
+                    controller : 'ContactController'
                 });
             $locationProvider.html5Mode(true);
         });
