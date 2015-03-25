@@ -12,14 +12,14 @@
         .controller('AboutController', AboutController)
         .controller('ContactController', ContactController);
 
-    function MenuController($scope, $location) {
+    function MenuController($location) {
         var vm = this;
         vm.is_active = function (path_root) {
             return path_root === $location.path().substr(1, path_root.length);
         };
     }
 
-    function AgenciesController($scope, fetchRestbusDataFactory) {
+    function AgenciesController(fetchRestbusDataFactory) {
         var vm = this;
         vm.data_loading = true;
         fetchRestbusDataFactory.get_agencies()
@@ -29,7 +29,7 @@
             });
     }
 
-    function RoutesController($scope, $routeParams, fetchRestbusDataFactory) {
+    function RoutesController($routeParams, fetchRestbusDataFactory) {
         var vm = this;
         vm.data_loading = true;
         vm.agency_id = $routeParams.agency_id;
@@ -40,7 +40,7 @@
             });
     }
 
-    function StopsController($scope, $routeParams, fetchRestbusDataFactory) {
+    function StopsController($routeParams, fetchRestbusDataFactory) {
         var vm = this;
         vm.agency_id = $routeParams.agency_id;
         vm.route_id = $routeParams.route_id;
@@ -54,7 +54,7 @@
             });
     }
 
-    function PredictionsController($scope, $routeParams, fetchRestbusDataFactory) {
+    function PredictionsController($routeParams, fetchRestbusDataFactory) {
         var vm = this;
         vm.agency_id = $routeParams.agency_id;
         vm.route_id = $routeParams.route_id;
@@ -77,7 +77,7 @@
             });
     }
 
-    function HomepageController($scope, $cookies) {
+    function HomepageController($cookies) {
         var vm = this;
         vm.last_search = angular.fromJson($cookies.last_search) || false;
     }
