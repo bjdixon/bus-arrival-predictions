@@ -22,22 +22,32 @@
     function AgenciesController(fetchRestbusDataFactory) {
         var vm = this;
         vm.data_loading = true;
-        fetchRestbusDataFactory.get_agencies()
-            .then(function (data) {
-                vm.agencies = data;
-                vm.data_loading = false;
-            });
+
+        activate();
+
+        function activate() {
+            return fetchRestbusDataFactory.get_agencies()
+                .then(function (data) {
+                    vm.agencies = data;
+                    vm.data_loading = false;
+                });
+        }
     }
 
     function RoutesController($routeParams, fetchRestbusDataFactory) {
         var vm = this;
         vm.agency_id = $routeParams.agency_id;
         vm.data_loading = true;
-        fetchRestbusDataFactory.get_routes($routeParams.agency_id)
-            .then(function (data) {
-                vm.routes = data;
-                vm.data_loading = false;
-            });
+
+        activate();
+
+        function activate() {
+            return fetchRestbusDataFactory.get_routes($routeParams.agency_id)
+                .then(function (data) {
+                    vm.routes = data;
+                    vm.data_loading = false;
+                });
+        }
     }
 
     function StopsController($routeParams, fetchRestbusDataFactory) {
@@ -46,12 +56,17 @@
         vm.data_loading = true;
         vm.route_id = $routeParams.route_id;
         vm.route_title = '';
-        fetchRestbusDataFactory.get_stops($routeParams.agency_id, $routeParams.route_id)
-            .then(function (data) {
-                vm.data_loading = false;
-                vm.route_title = data.title;
-                vm.stops = data.stops;
-            });
+
+        activate();
+
+        function activate() {
+            fetchRestbusDataFactory.get_stops($routeParams.agency_id, $routeParams.route_id)
+                .then(function (data) {
+                    vm.data_loading = false;
+                    vm.route_title = data.title;
+                    vm.stops = data.stops;
+                });
+        }
     }
 
     function PredictionsController($routeParams, fetchRestbusDataFactory) {
@@ -62,19 +77,24 @@
         vm.route_title = '';
         vm.stop_id = $routeParams.stop_id;
         vm.stop_title = '';
-        fetchRestbusDataFactory.get_predictions($routeParams.agency_id, $routeParams.route_id, $routeParams.stop_id)
-            .then(function (data) {
-                if (data !== undefined) {
-                    vm.data_loading = false;
-                    vm.predictions = data.predictions;
-                    vm.predictions_available = true;
-                    vm.route_title = data.route_title;
-                    vm.stop_title = data.stop_title;
-                } else {
-                    vm.data_loading = false;
-                    vm.predictions_available = false;
-                }
-            });
+
+        activate();
+
+        function activate() {
+            fetchRestbusDataFactory.get_predictions($routeParams.agency_id, $routeParams.route_id, $routeParams.stop_id)
+                .then(function (data) {
+                    if (data !== undefined) {
+                        vm.data_loading = false;
+                        vm.predictions = data.predictions;
+                        vm.predictions_available = true;
+                        vm.route_title = data.route_title;
+                        vm.stop_title = data.stop_title;
+                    } else {
+                        vm.data_loading = false;
+                        vm.predictions_available = false;
+                    }
+                });
+        }
     }
 
     function HomepageController($cookies) {
