@@ -5,6 +5,8 @@
         .module('predictionsApp')
         .factory('fetchRestbusDataFactory', fetchRestbusData);
 
+    fetchRestbusData.$inject = ['$http', '$location', '$cookieStore', 'appConstants'];
+
     function fetchRestbusData($http, $location, $cookieStore, appConstants) {
         return {
             get_agencies: get_agencies,

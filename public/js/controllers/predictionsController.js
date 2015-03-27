@@ -12,12 +12,16 @@
         .controller('AboutController', AboutController)
         .controller('ContactController', ContactController);
 
+    MenuController.$inject = ['$location'];
+
     function MenuController($location) {
         var vm = this;
         vm.is_active = function (path_root) {
             return path_root === $location.path().substr(1, path_root.length);
         };
     }
+
+    AgenciesController.$inject = ['fetchRestbusDataFactory'];
 
     function AgenciesController(fetchRestbusDataFactory) {
         var vm = this;
@@ -34,6 +38,8 @@
         }
     }
 
+    RoutesController.$inject = ['$routeParams', 'fetchRestbusDataFactory'];
+
     function RoutesController($routeParams, fetchRestbusDataFactory) {
         var vm = this;
         vm.agency_id = $routeParams.agency_id;
@@ -49,6 +55,8 @@
                 });
         }
     }
+
+    StopsController.$inject = ['$routeParams', 'fetchRestbusDataFactory'];
 
     function StopsController($routeParams, fetchRestbusDataFactory) {
         var vm = this;
@@ -68,6 +76,8 @@
                 });
         }
     }
+
+    PredictionsController.$inject = ['$routeParams', 'fetchRestbusDataFactory'];
 
     function PredictionsController($routeParams, fetchRestbusDataFactory) {
         var vm = this;
@@ -96,6 +106,8 @@
                 });
         }
     }
+
+    HomepageController.$inject = ['$cookies'];
 
     function HomepageController($cookies) {
         var vm = this;
