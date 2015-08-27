@@ -1,3 +1,6 @@
+[![Dependency Status](https://david-dm.org/bjdixon/bus-arrival-predictions.svg)](https://david-dm.org/bjdixon/bus-arrival-predictions)
+[![devDependency Status](https://david-dm.org/bjdixon/bus-arrival-predictions/dev-status.svg)](https://david-dm.org/bjdixon/bus-arrival-predictions#info=devDependencies)
+
 Lookup bus routes and next arrival predictions. 
 ===============================================
 
