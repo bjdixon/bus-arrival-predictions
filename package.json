@@ -5,10 +5,10 @@
   "main": "server.js",
   "author": "bjdixon",
   "dependencies": {
-    "express": "~4.7.2",
-    "morgan": "~1.2.2",
-    "body-parser": "~1.5.2",
-    "method-override": "~2.1.2",
+    "express": "~4.13.3",
+    "morgan": "~1.6.1",
+    "body-parser": "~1.13.3",
+    "method-override": "~2.3.5",
     "restbus": "~1.1.0"
   },
   "scripts": {
@@ -24,7 +24,7 @@
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.11.1",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-protractor-runner": "^1.2.1"
+    "grunt-protractor-runner": "^2.1.0"
   },
   "repository": {
     "type": "git",
