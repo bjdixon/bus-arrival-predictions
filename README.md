@@ -26,3 +26,10 @@ Serves front end application (angular) eg: http://localhost:8080/
 
 Includes a small suite of integration tests that require protractor.js to run.
 
+Instructions for testing
+------------------------
+
+You have to run ``` webdriver-manager start ```
+and ``` npm start ```
+before you can run ``` grunt test ```
+
