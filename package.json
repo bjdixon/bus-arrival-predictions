@@ -7,7 +7,7 @@
   "dependencies": {
     "express": "~4.13.3",
     "morgan": "~1.6.1",
-    "body-parser": "~1.14.0",
+    "body-parser": "~1.15.0",
     "method-override": "~2.3.5",
     "restbus": "~1.1.0"
   },
@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^0.12.0",
+    "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-protractor-runner": "^3.0.0"
   },
