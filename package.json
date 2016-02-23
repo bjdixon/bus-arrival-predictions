@@ -6,7 +6,7 @@
   "author": "bjdixon",
   "dependencies": {
     "express": "~4.13.3",
-    "morgan": "~1.6.1",
+    "morgan": "~1.7.0",
     "body-parser": "~1.15.0",
     "method-override": "~2.3.5",
     "restbus": "~1.1.0"
@@ -24,7 +24,8 @@
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-protractor-runner": "^3.0.0"
+    "grunt-protractor-runner": "^3.0.0",
+    "morgan": "^1.6.1"
   },
   "repository": {
     "type": "git",
